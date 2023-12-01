@@ -1,0 +1,6 @@
+cuda_add_executable(colorToGrayscaleConversion colorToGrayscaleConversion.cu)
+cuda_add_executable(imageBlur imageBlur.cu)
+cuda_add_executable(matMul matMul.cu)
+
+target_link_libraries(colorToGrayscaleConversion libutils)
+target_link_libraries(imageBlur libutils)
