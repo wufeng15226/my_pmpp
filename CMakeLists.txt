@@ -9,3 +9,4 @@ cuda_select_nvcc_arch_flags(ARCH_FLAGS 8.0+PTX 8.0) # -arch=sm_80 / -arch=sm_80 
 add_subdirectory(utils)
 add_subdirectory(chapter_02)
 add_subdirectory(chapter_03)
+add_subdirectory(chapter_05)
