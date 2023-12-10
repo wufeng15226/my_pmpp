@@ -1,1 +1,1 @@
-cuda_add_executable(matMulTiled matMulTiled.cu)
+add_executable(matMulTiled matMulTiled.cu)

@@ -1,1 +1,1 @@
-cuda_add_executable(vectorAdd vectorAdd.cu)
+add_executable(vectorAdd vectorAdd.cu)

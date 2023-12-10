@@ -1,2 +1,2 @@
-cuda_add_executable(matMulThreadCoarse matMulThreadCoarse.cu)
-cuda_add_executable(matMulCornerTurning matMulCornerTurning.cu)
+add_executable(matMulThreadCoarse matMulThreadCoarse.cu)
+add_executable(matMulCornerTurning matMulCornerTurning.cu)
