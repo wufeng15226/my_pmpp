@@ -1,0 +1,4 @@
+add_executable(reduce reduce.cu)
+add_executable(reduceSharedMemory reduceSharedMemory.cu)
+add_executable(reduceMultiBlocks reduceMultiBlocks.cu)
+add_executable(reduceThreadCoarse reduceThreadCoarse.cu)
