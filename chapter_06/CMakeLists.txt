@@ -1,2 +1,6 @@
 add_executable(matMulThreadCoarse matMulThreadCoarse.cu)
 add_executable(matMulCornerTurning matMulCornerTurning.cu)
+add_executable(matCopy matCopy.cu)
+add_executable(matTransposeReadCoalesced matTransposeReadCoalesced.cu)
+add_executable(matTransposeWriteCoalesced matTransposeWriteCoalesced.cu)
+add_executable(matTransposeSharedMemory matTransposeSharedMemory.cu)

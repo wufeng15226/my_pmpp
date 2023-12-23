@@ -9,9 +9,13 @@ cmake --build build &&
 # ./build/chapter_05/matMulTiled
 # ./build/chapter_06/matMulCornerTurning
 # ./build/chapter_06/matMulThreadCoarse
+./build/chapter_06/matCopy
+./build/chapter_06/matTransposeReadCoalesced
+./build/chapter_06/matTransposeWriteCoalesced
+./build/chapter_06/matTransposeSharedMemory
 # ./build/chapter_10/reduce
 # ./build/chapter_10/reduceSharedMemory
 # ./build/chapter_10/reduceMultiBlocks
 # ./build/chapter_10/reduceThreadCoarse
-./build/chapter_10/reduceUnroll
-./build/chapter_10/reduceWarpPrimitives
+# ./build/chapter_10/reduceUnroll
+# ./build/chapter_10/reduceWarpPrimitives
