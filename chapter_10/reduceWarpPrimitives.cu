@@ -44,7 +44,6 @@ void reduceWarpPrimitivesKernel(float* A, float* sum){
 }
 
 void reduceWarpPrimitives(float* A, float* sum){
-    cudaSetDevice(5);
     float *A_d;
     cudaMalloc((void**)&A_d, (N+1) * sizeof(float));
     cudaMemcpy(A_d, A, N * sizeof(float), cudaMemcpyHostToDevice);
