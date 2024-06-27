@@ -9,9 +9,9 @@ void matMulKernel(half* A, half* B, half* C, int M, int N, int K){
     if(i<M && j<N){
         half sum = 0;
         for(int k=0;k<K;++k){
-            sum += A[i*K+k] * B[k*N+j];
+            sum += A[i*K+k] * B[j*K+k];
         }
-        C[i*N+j] = sum;
+        C[j*M+i] = sum;
     }
 }
 
@@ -22,9 +22,10 @@ void matmul(half* A, half* B, half* C, int M, int N, int K){
     CUDA_CHECK(cudaMalloc((void**)&C_d, M * N * sizeof(half)));
     CUDA_CHECK(cudaMemcpy(A_d, A, M * K * sizeof(half), cudaMemcpyHostToDevice));
     CUDA_CHECK(cudaMemcpy(B_d, B, K * N * sizeof(half), cudaMemcpyHostToDevice));
-    CUDA_CHECK(cudaMemcpy(C_d, C, K * N * sizeof(half), cudaMemcpyHostToDevice));
+    CUDA_CHECK(cudaMemcpy(C_d, C, M * N * sizeof(half), cudaMemcpyHostToDevice));
 
-    dim3 dimGrid(ceil(M/32.0), ceil(N/32.0), 1);
+    // C is col major
+    dim3 dimGrid(ceil(N/32.0), ceil(M/32.0), 1);
     dim3 dimBlock(32, 32, 1);
     matMulKernel<<<dimGrid, dimBlock>>>(A_d, B_d, C_d, M, N, K);
 

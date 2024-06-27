@@ -69,7 +69,7 @@ void cublasMatmul(half* hA, half* hB, half* hC, int M, int N, int K){
     std::cout << "Running cost (ms) of CuBLAS is " << ms / 200.0 << "\n";
     std::cout << "TFLOPS: " << (float)M * N * K * 2 / (ms / 200.0) * 1e3 / 1e12 << "\n";
 
-    cudaMemcpy(hC, dC, M * K * 2, cudaMemcpyDeviceToHost);
+    cudaMemcpy(hC, dC, M * N * 2, cudaMemcpyDeviceToHost);
     cudaFree(dA);
     cudaFree(dB);
     cudaFree(dC);
