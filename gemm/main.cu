@@ -16,8 +16,8 @@
 const int M = 1024;
 const int N = 1024;
 const int K = 1024;
-// const int M = 64;
-// const int N = 64;
+// const int M = 128;
+// const int N = 128;
 // const int K = 128;
 
 extern void matmul(half *A, half *B, half *C, int M, int N, int K);
@@ -173,9 +173,9 @@ int main(){
 #else
 #endif
 
-    int err = checkError(C, cublasC, M, N);
+    int err = checkError(cublasC, C, M, N);
 #ifdef DEBUG
-    err += checkError(C, goldenC, M, N);
+    err += checkError(goldenC, C, M, N);
 #else
 #endif
     if(err) std::cout<<"Error: "<<err<<std::endl;
